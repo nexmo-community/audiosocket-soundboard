@@ -67,7 +67,7 @@ class SoundHandler(tornado.websocket.WebSocketHandler):
 				data = f.readframes(320)
 				for c in connections:
 					c.write_message(data, binary=True)
-					time.sleep(0.018) 
+					#time.sleep(0.018) #Turn off gap between frames as Nexmo now buffers
 	    def on_close(self):
 	        print("client disconnected")
 
